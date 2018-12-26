@@ -14,18 +14,22 @@ from cloudshell.traffic.teravm.controller.runners.tvm_tests_runner import TeraVM
 
 class TeravmControllerShell2GDriver(ResourceDriverInterface):
 
+    SHELL_TYPE = "CS_TrafficGeneratorController"
+    SHELL_NAME = "TeraVM Controller Shell 2G"
+
     def __init__(self):
         super(TeravmControllerShell2GDriver, self).__init__()
         self._cli = None
 
-    #TODO: TBD IS IT WORKING??
     def initialize(self, context):
         """
 
         :param context: ResourceCommandContext,ReservationContextDetailsobject with all Resource Attributes inside
         :type context:  context: cloudshell.shell.core.driver_context.ResourceRemoteCommandContext
         """
-        resource_config = TrafficGeneratorControllerResource.from_context(context)
+        resource_config = TrafficGeneratorControllerResource.from_context(context=context,
+                                                                          shell_name=self.SHELL_NAME,
+                                                                          shell_type=self.SHELL_TYPE)
         session_pool_size = int(resource_config.sessions_concurrency_limit)
         self._cli = get_cli(session_pool_size)
 
@@ -46,8 +50,11 @@ class TeravmControllerShell2GDriver(ResourceDriverInterface):
         with ErrorHandlingContext(logger):
             cs_api = get_api(context)
             reservation_id = context.reservation.reservation_id
-            resource_config = TrafficGeneratorControllerResource.create_from_chassis_resource(context=context,
-                                                                                              cs_api=cs_api)
+            resource_config = TrafficGeneratorControllerResource.create_from_chassis_resource(
+                context=context,
+                shell_name=self.SHELL_NAME,
+                shell_type=self.SHELL_TYPE,
+                cs_api=cs_api)
 
             load_conf_runner = TeraVMLoadConfigurationRunner(resource_config=resource_config,
                                                              cs_api=cs_api,
@@ -72,8 +79,11 @@ class TeravmControllerShell2GDriver(ResourceDriverInterface):
 
         with ErrorHandlingContext(logger):
             cs_api = get_api(context)
-            resource_config = TrafficGeneratorControllerResource.create_from_chassis_resource(context=context,
-                                                                                              cs_api=cs_api)
+            resource_config = TrafficGeneratorControllerResource.create_from_chassis_resource(
+                context=context,
+                shell_name=self.SHELL_NAME,
+                shell_type=self.SHELL_TYPE,
+                cs_api=cs_api)
 
             test_runner = TeraVMTestsRunner(resource_config=resource_config,
                                             cs_api=cs_api,
@@ -96,8 +106,11 @@ class TeravmControllerShell2GDriver(ResourceDriverInterface):
 
         with ErrorHandlingContext(logger):
             cs_api = get_api(context)
-            resource_config = TrafficGeneratorControllerResource.create_from_chassis_resource(context=context,
-                                                                                              cs_api=cs_api)
+            resource_config = TrafficGeneratorControllerResource.create_from_chassis_resource(
+                context=context,
+                shell_name=self.SHELL_NAME,
+                shell_type=self.SHELL_TYPE,
+                cs_api=cs_api)
 
             test_runner = TeraVMTestsRunner(resource_config=resource_config,
                                             cs_api=cs_api,
@@ -123,8 +136,11 @@ class TeravmControllerShell2GDriver(ResourceDriverInterface):
         with ErrorHandlingContext(logger):
             cs_api = get_api(context)
             reservation_id = context.reservation.reservation_id
-            resource_config = TrafficGeneratorControllerResource.create_from_chassis_resource(context=context,
-                                                                                              cs_api=cs_api)
+            resource_config = TrafficGeneratorControllerResource.create_from_chassis_resource(
+                context=context,
+                shell_name=self.SHELL_NAME,
+                shell_type=self.SHELL_TYPE,
+                cs_api=cs_api)
 
             quali_api_client = create_quali_api_instance(context, logger)
             quali_api_client.login()
@@ -152,8 +168,11 @@ class TeravmControllerShell2GDriver(ResourceDriverInterface):
 
         with ErrorHandlingContext(logger):
             cs_api = get_api(context)
-            resource_config = TrafficGeneratorControllerResource.create_from_chassis_resource(context=context,
-                                                                                              cs_api=cs_api)
+            resource_config = TrafficGeneratorControllerResource.create_from_chassis_resource(
+                context=context,
+                shell_name=self.SHELL_NAME,
+                shell_type=self.SHELL_TYPE,
+                cs_api=cs_api)
 
             cleanup_runner = TeraVMCleanupRunner(resource_config=resource_config,
                                                  cs_api=cs_api,
@@ -270,7 +289,7 @@ if __name__ == "__main__":
     context.resource.name = 'dsada'
     context.resource.fullname = 'TestAireOS'
     context.reservation = ReservationContextDetails()
-    context.reservation.reservation_id = '559a65ef-962d-4495-a575-f6b0eb95f7af'
+    context.reservation.reservation_id = "4083a35f-b7a8-437e-88ce-7c47c5f971a7"
     context.resource.attributes = {}
 
     for attr, value in [("User", user),

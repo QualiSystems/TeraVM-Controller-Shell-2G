@@ -16,16 +16,15 @@ node_types:
 
   vendor.resource.TeraVM Controller Shell 2G:
     derived_from: cloudshell.nodes.TrafficGeneratorController
-    #properties:
-    #  my_property:
-    #    type: string          # optional values: string, integer, float, boolean, cloudshell.datatypes.Password
-    #    default: fast
-    #    description: Some attribute description
-    #    constraints:
-    #      - valid_values: [fast, slow]
-    #  Service Categories:
-    #    type: list
-    #    default: [My Category 1, My Category 2]    
+    properties:
+      Test User:
+        description: TeraVM Test User for Open Automation Authorization
+        type: string
+        tags: [user_input]
+      Test User Password:
+        description: TeraVM Test User Password for Open Automation Authorization
+        type: cloudshell.datatypes.Password
+        tags: [user_input]
     artifacts:
       icon:
         file: shell-icon.png
