@@ -68,7 +68,7 @@ class TeravmControllerShell2GDriver(ResourceDriverInterface):
 
             return response
 
-    def start_traffic(self, context, blocking):
+    def start_traffic(self, context):
         """Start traffic on all ports
 
         :param context: the context the command runs on
@@ -122,12 +122,10 @@ class TeravmControllerShell2GDriver(ResourceDriverInterface):
 
             return response
 
-    def get_statistics(self, context, view_name, output_type):
+    def get_statistics(self, context):
         """Get real time statistics as sandbox attachment
 
         :param context:
-        :param str view_name: requested view name
-        :param str output_type: CSV or JSON
         :return:
         """
         logger = get_logger_with_thread_id(context)
@@ -183,93 +181,6 @@ class TeravmControllerShell2GDriver(ResourceDriverInterface):
             logger.info('Cleanup reservation command ended')
 
             return response
-
-    def send_arp(self, context):
-        """Send ARP/ND for all protocols
-
-        :param context:
-        :return:
-        """
-        pass
-
-    def start_protocols(self, context):
-        """Start all protocols
-
-        :param context:
-        :return:
-        """
-        pass
-
-    def stop_protocols(self, context):
-        """Stop all protocols
-
-        :param context:
-        :return:
-        """
-        pass
-
-    def run_quick_test(self, context):
-        """Run quick test
-
-        :param context:
-        :return:
-        """
-        pass
-
-    def get_session_id(self, context):
-        """API only command to get REST session ID
-
-        :param context:
-        :return:
-        """
-        pass
-
-    def get_children(self, context, obj_ref, child_type):
-        """API only command to get list of children
-
-        :param context:
-        :param str obj_ref: valid object reference
-        :param str child_type: requested children type. If None returns all children
-        :return:
-        """
-        pass
-
-    def get_attributes(self, context, obj_ref):
-        """API only command to get object attributes
-
-        :param context:
-        :param str obj_ref: valid object reference
-        :return:
-        """
-        pass
-
-    def set_attribute(self, context, obj_ref, attr_name, attr_value):
-        """API only command to set traffic generator object attribute
-
-        :param context:
-        :param str obj_ref: valid object reference
-        :param str attr_name: attribute name
-        :param str attr_value: attribute value
-        :return:
-        """
-        pass
-
-    def cleanup(self, context):
-        """
-
-        :param context:
-        :return:
-        """
-        pass
-
-    def keep_alive(self, context, cancellation_context):
-        """
-
-        :param context:
-        :param cancellation_context:
-        :return:
-        """
-        pass
 
 
 if __name__ == "__main__":

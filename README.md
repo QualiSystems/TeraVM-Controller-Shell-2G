@@ -64,7 +64,7 @@ For Traffic Generator shells, commands are configured and executed from the cont
 |:-----|:-----|
 |Autoload|Discovers the chassis, its hierarchy and attributes when creating the resource. The command can be rerun in the **Inventory** dashboard and not in the sandbox, as for other commands.|
 |Load Configuration|Loads configuration and reserves ports.<br>Set the command input as follows:<br>* **TeraVM config file** (config_file_name (String)): The configuration file name. Path should include the protocol type, for  example *tftp://10.10.10.10/asdf*.<br>* **Use ports from reservation** (Enum): **True** or **False**. Updates the configuration file with ports from the current reservation based on their **Logical Name** attributes.
-|Start Test|Starts traffic test.<br>Possible values:<br>* **Blocking**: **True**: Returns after traffic finishes to run; **False**: Returns immediately|
+|Start Test|Starts traffic test.|
 |Stop Test|Stops traffic test.|
 |Get Statistics|Gets the test result file and attaches it to the reservation.|
 
