@@ -82,7 +82,7 @@ The shell comprises:
 |Cleanup Reservation.zip|Teardown script for cleaning a reservation.|
 
 ## Importing and Configuring the Shell
-This section describes how to import the Ixia IxLoad Controller 2G shell and configure and modify the shell’s devices. 
+This section describes how to import the TeraVM Controller 2G shell and configure and modify the shell’s devices. 
 
 ### Importing the shell into CloudShell
 
