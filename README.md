@@ -49,7 +49,7 @@ Release: **TeraVM Controller 2G**
 
 ▪ TeraVM version: 13.4
 
-▪ CloudShell: 8.1 and above
+▪ CloudShell version: 8.3 Patch 3, 9.0 Patch 2, 9.1 and above
 
 ### Data Model
 
