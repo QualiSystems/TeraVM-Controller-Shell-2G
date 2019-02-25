@@ -41,7 +41,7 @@ The **TeraVM Controller** provides automation commands to run on the TeraVM Chas
 ### Standard version
 The **TeraVM Controller 2G Shell** shell is based on the Traffic Generator Controller Standard version 2.0.0.
 
-For detailed information about the shell’s structure and attributes, see the [Traffic Shell standard](https://github.com/QualiSystems/shell-traffic-standard/blob/master/spec/traffic_standard.md) in GitHub.
+For detailed information about the shell’s structure and attributes, see the [Traffic Shell standard](https://github.com/QualiSystems/cloudshell-standards/blob/master/Documentation/Traffic%20Generator%20Controller%20Shell%20Standard.md) in GitHub.
 
 ### Requirements
 
